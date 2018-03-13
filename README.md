@@ -48,12 +48,12 @@ This infrastructure is set up on the us-east-1 region, primarily because it supp
       * Rule description: Trigger every 5 minutes
       * Schedule: cron(0/5 * ? * * *)
    2. Click "sugar" within the Designer pane.
-   3. From GitHub, "Clone or download"->"Download ZIP". Resulting package will likely be "sugar-master.zip".
+   3. From GitHub, download [lambda package](https://github.com/michael-stricklin/sugar/releases/download/v1.0.0/sugar.zip).
    4. Within the **Function code** pane:
       * Code entry type: Upload a .ZIP file
       * Runtime: Python 2.7
       * Handler: scrape.handler
-      * Function package: select "Upload", then navigate to the zip-file downloaded in 2iii.
+      * Function package: select "Upload", then navigate to the zip-file downloaded in 2iii (sugar.zip).
    5. In **Environment variables** pane:
       * Add an environment variable "ACCOUNT" with a value of your Dexcom account username.
       * Add an environment variable "PASS" with a value of your Dexcom account password.
