@@ -6,9 +6,11 @@ Load should be low enough (for a single user) to keep usage within non-expiring 
 
 ### Prerequisites
 
+- Some basics knowlege of the AWS ecosystem.
+- Familiarity with the Dexcom CGM (continuous glucode monitor).
 - Dexcom share account
-  * account username for Share account
-  * password from Share account
+  * account username for Share account.
+  * password from Share account.
 - AWS account.
 - Configuration for AWS lambda.
 - Configuration for AWS DynamoDB.
