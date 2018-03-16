@@ -32,22 +32,22 @@ class Rule(object):
         return self
     def recentData(self, hour=0, minute=0, second=0):
         window = _normalize_seconds(hour, minute, second)
-        self.rules.append(lambda data: _lastDatapoint(data).timestamp()+window >= int(time()))
+        self.rules.append(lambda data: _lastDatapoint(data).system_time+window >= int(time()))
         return self
     # true if last datapoint is between 'low' and 'high'
     def between(self, low, high):
-        self.rules.append(lambda data: low <= _lastDatapoint(data).value() <= high)
+        self.rules.append(lambda data: low <= _lastDatapoint(data).value <= high)
         return self
     # true if below 'high'
     def below(self, high):
-        self.rules.append(lambda data: _lastDatapoint(data).value() <= high)
+        self.rules.append(lambda data: _lastDatapoint(data).value <= high)
         return self
     # true if above 'low'
     def above(self, low):
-        self.rules.append(lambda data: _lastDatapoint(data).value() >= low)
+        self.rules.append(lambda data: _lastDatapoint(data).value >= low)
         return self
     def trend(self, trend_value):
-        self.rules.append(lambda data: _lastDatapoint(data).trend() == trend_value)
+        self.rules.append(lambda data: _lastDatapoint(data).trend == trend_value)
         return self
     def dampen(self, hour=0, minute=0, second=0):
         window = _normalize_seconds(hour, minute, second)

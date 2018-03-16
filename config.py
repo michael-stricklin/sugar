@@ -45,7 +45,7 @@ rules = [
                     .above(200)
                     .dampen(minute=30)
                     .log(),
-        Rule('Heading low').recentData(minute=10, second=10)
+        Rule('Heading low-fast').recentData(minute=10, second=10)
                     .between(80, 150)
                     .trend('2xDown')
                     .dampen(minute=30)
@@ -60,7 +60,7 @@ rules = [
                     .trend('Up')
                     .dampen(minute=30)
                     .log(),
-        Rule('Heading high').recentData(minute=10, second=10)
+        Rule('Heading high-fast').recentData(minute=10, second=10)
                     .between(150, 200)
                     .trend('2xUp')
                     .dampen(minute=30)
