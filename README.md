@@ -48,7 +48,8 @@ This infrastructure is set up on the us-east-1 region, primarily because it supp
       * Rule: Create a new rule
       * Rule name: Every5Minutes
       * Rule description: Trigger every 5 minutes
-      * Schedule: cron(0/5 * ? * * *)
+      * Schedule: cron(1/5 * ? * * *)
+        * This schedules the jobs for every five minutes, starting at 1 minute after the top of the hour (e.g. 12:01, 12:06, 12:11). The App schedules checks on 5 minute interval, at the top of the hour, so and additional minute will give time for the data to propagate.*
    2. Click "sugar" within the Designer pane.
    3. From GitHub, download [lambda package](https://github.com/michael-stricklin/sugar/releases/download/v1.0.0/sugar.zip).
    4. Within the **Function code** pane:
